@@ -11,10 +11,13 @@ class CustomArrayListTest {
 
 	@BeforeEach
 	void run_before_each_test() {
+		
 		sut = new CustomArrayList<>();
 
 		for (int i = 0; i < 20; i++) {
+			
 			sut.add(i + 1);
+			
 		}
 	}
 	
@@ -27,6 +30,8 @@ class CustomArrayListTest {
 
 		assertEquals(-8, sut.get(0));
 		assertEquals(21, sut.getSize());
+		                          
+		
 	}
 	
 	
@@ -35,9 +40,11 @@ class CustomArrayListTest {
 	void should_add_into_middle_of_arraylist() {
 
 		sut.add(9, 100);
-
+		
 		assertEquals(100, sut.get(9));
 		assertEquals(21, sut.getSize());
+		
+		
 	}
 	
 	
@@ -61,18 +68,22 @@ class CustomArrayListTest {
 		assertEquals(2, sut.get(0));
 		assertEquals(20, sut.get(sut.getSize() - 1));
 		
+		
 	}
 	
 	
 
 	@Test
 	void should_remove_from_middle_of_arraylist() {
-		Integer itemRemoved = sut.remove(11);
+		
+		Integer itemRemoved = sut.remove(9);
 
-		assertEquals(12, itemRemoved);
+		assertEquals(10, itemRemoved);
 		assertEquals(19, sut.getSize());
 		assertEquals(1, sut.get(0));
 		assertEquals(20, sut.get(sut.getSize() - 1));
+		
+		
 	}
 
 	
@@ -85,6 +96,7 @@ class CustomArrayListTest {
 		assertEquals(19, sut.getSize());
 		assertEquals(1, sut.get(0));
 		assertEquals(19, sut.get(sut.getSize() - 1));
+		
 	}
 	
 	

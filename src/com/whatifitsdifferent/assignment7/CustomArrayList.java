@@ -4,10 +4,9 @@ package com.whatifitsdifferent.assignment7;
 	public class CustomArrayList<T> implements CustomList<T> {
 		
 		Object[] items = new Object[10];
-		int variableArraySize = 0;
+		int variableArraySize;
 
 		
-		@Override
 		public boolean add(T item) {
 			
 			return add(variableArraySize, item);
@@ -30,8 +29,7 @@ package com.whatifitsdifferent.assignment7;
 		}
 		
 		
-
-		@Override
+		
 		public int getSize() {
 			
 			return variableArraySize;
