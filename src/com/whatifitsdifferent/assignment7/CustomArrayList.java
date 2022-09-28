@@ -5,38 +5,24 @@ package com.whatifitsdifferent.assignment7;
 		
 		Object[] items = new Object[10];
 		int variableArraySize;
-
 		
 		public boolean add(T item) {
 			
 			return add(variableArraySize, item);
-			
 		}
-		
 
 		private Object[] extendArraySize() {
 
 			Object[] newArray = new Object[variableArraySize * 2];
-			
 			for (int i = 0; i < variableArraySize; i++) {
-				
 				newArray[i] = items[i];
-				
 			}
-			
 			return newArray;
-			
 		}
-		
-		
-		
+	
 		public int getSize() {
-			
 			return variableArraySize;
-			
 		}
-		
-
 		
 		@SuppressWarnings("unchecked")
 		@Override
@@ -45,13 +31,9 @@ package com.whatifitsdifferent.assignment7;
 			if(index >= variableArraySize) {
 				throw new IndexOutOfBoundsException("This is out of bounds");
 			}
-			
 			return (T) items[index];
-			
 		}
 		
-		
-
 		@Override
 		public boolean add(int index, T item) throws IndexOutOfBoundsException {
 			if (index > variableArraySize) {
@@ -61,7 +43,7 @@ package com.whatifitsdifferent.assignment7;
 				items = extendArraySize();
 			}
 			
-			for (int i = variableArraySize-1; i>index; i--) {
+			for (int i = variableArraySize-1; i>=index; i--) {
 				items[i+1] = items[i];
 			}
 			items[index] = item;
@@ -69,8 +51,6 @@ package com.whatifitsdifferent.assignment7;
 			return true;
 			
 		}
-		
-		
 
 		@Override
 		public T remove(int index) throws IndexOutOfBoundsException {
